@@ -16,5 +16,5 @@ function printFileContents(filePath) {
   }
 }
 
-
-printFileContents('./output.txt');
+const args=process.argv.slice(2);
+printFileContents(args[0]);
