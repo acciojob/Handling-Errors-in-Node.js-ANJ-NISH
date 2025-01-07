@@ -1,7 +1,20 @@
 const fs = require('fs');
 
 function printFileContents(filePath) {
-  // TODO: Use fs.readFile to read the file contents
+  
+  if(fs.existsSync(filePath))
+  {
+    fs.readFile(filePath, (err,data)=> {if(err){
+      console.log(err);
+    }else{
+      console.log(data.toString());
+    }})
+  }
+  else
+  {
+    console.log("Column '${columnName}' not found in the CSV.");
+  }
 }
 
-// TODO: Call printFileContents with the command-line argument
+
+printFileContents('./output.txt');
